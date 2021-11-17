@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.manhpd.MainwindowController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <Button text="Add guest">
+            <tooltip>
+                <Tooltip text="Click to add a new person"/>
+            </tooltip>
+        </Button>
+        <Button text="Show drinks and food">
+            <tooltip>
+                <Tooltip text="Click to display a list of drinks and food"/>
+            </tooltip>
+        </Button>
+        <Button text="Find">
+            <tooltip>
+                <Tooltip text="Click to find guest by phone number"/>
+            </tooltip>
+        </Button>
+    </top>
+    <left>
+        <ListView fx:id="guestsListView"/>
+    </left>
+    <center>
+        <VBox spacing="10">
+            <HBox>
+                <Label text="Preffered food:  " style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial" size="15"/>
+                    </font>
+                </Label>
+
+                <Label fx:id="foodFromData" style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial bold" size="15"/>
+                    </font>
+                </Label>
+            </HBox>
+
+            <HBox>
+                <Label text="Preffered drink:  " style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial" size="15"/>
+                    </font>
+                </Label>
+
+                <Label fx:id="drinkFromData" style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial bold" size="15"/>
+                    </font>
+                </Label>
+            </HBox>
+
+            <HBox>
+                <Label text="Phone number:  " style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial" size="15"/>
+                    </font>
+                </Label>
+
+                <Label fx:id="phoneNumberFromData" style="-fx-background-color: white">
+                    <font>
+                        <Font name="Arial bold" size="15"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
