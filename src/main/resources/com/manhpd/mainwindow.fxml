@@ -9,21 +9,23 @@
             fx:controller="com.manhpd.MainwindowController"
             prefHeight="400.0" prefWidth="600.0">
     <top>
-        <Button text="Add guest">
-            <tooltip>
-                <Tooltip text="Click to add a new person"/>
-            </tooltip>
-        </Button>
-        <Button text="Show drinks and food">
-            <tooltip>
-                <Tooltip text="Click to display a list of drinks and food"/>
-            </tooltip>
-        </Button>
-        <Button text="Find">
-            <tooltip>
-                <Tooltip text="Click to find guest by phone number"/>
-            </tooltip>
-        </Button>
+        <HBox spacing="5">
+            <Button text="Add guest">
+                <tooltip>
+                    <Tooltip text="Click to add a new person"/>
+                </tooltip>
+            </Button>
+            <Button text="Show drinks and food">
+                <tooltip>
+                    <Tooltip text="Click to display a list of drinks and food"/>
+                </tooltip>
+            </Button>
+            <Button text="Find">
+                <tooltip>
+                    <Tooltip text="Click to find guest by phone number"/>
+                </tooltip>
+            </Button>
+        </HBox>
     </top>
     <left>
         <ListView fx:id="guestsListView"/>
