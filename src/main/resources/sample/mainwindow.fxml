@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Font?>
-<BorderPane xmlns="http://javafx.com/javafx"
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.manhpd.MainwindowController"
             prefHeight="400.0" prefWidth="600.0">
     <top>
         <HBox spacing="5">
-            <Button text="Add guest">
+            <Button text="Add guest" onAction="#showNewGuestDialog">
                 <tooltip>
                     <Tooltip text="Click to add a new person"/>
                 </tooltip>
@@ -67,7 +67,7 @@
                     </font>
                 </Label>
 
-                <Label fx:id="phoneNumberFromData" style="-fx-background-color: white">
+                <Label fx:id="phoneFromData" style="-fx-background-color: white">
                     <font>
                         <Font name="Arial bold" size="15"/>
                     </font>
