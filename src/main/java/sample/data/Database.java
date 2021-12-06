@@ -1,4 +1,4 @@
-package com.manhpd.data;
+package sample.data;
 
 import java.sql.*;
 
@@ -62,6 +62,8 @@ public class Database {
         String food = guest.getFood();
         String drink = guest.getDrink();
         String phone = guest.getPhone();
+
+        initTableGuests();
 
         command = "INSERT INTO " + TABLE_GUESTS +
                     " VALUES('" + name + "', '"+ food + "', '" + drink + "', '" + phone + "')";

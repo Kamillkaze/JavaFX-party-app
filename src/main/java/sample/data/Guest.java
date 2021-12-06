@@ -1,4 +1,4 @@
-package com.manhpd.data;
+package sample.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.manhpd.data;
+package sample.data;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,7 +23,7 @@ public class RuntimeGuestsData {
 
     public void addGuest(Guest newGuest) {
         guests.add(newGuest);
-        Database.addGuestToDB(newGuest);
+//        Database.addGuestToDB(newGuest);
     }
 
     public void deleteGuest(Guest guestToDelete) {

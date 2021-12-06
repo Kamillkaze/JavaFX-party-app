@@ -1,4 +1,4 @@
-package com.manhpd;
+package sample;
 
 public class FoodanddrinkwindowController {
 }

@@ -1,9 +1,11 @@
-package com.manhpd;
+package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import sample.data.Guest;
+import sample.data.RuntimeGuestsData;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -27,7 +29,7 @@ public class MainwindowController {
 
     @FXML
     private void initialize() {
-
+        guestsListView.setItems(RuntimeGuestsData.getInstance().getGuests());
     }
 
     @FXML
@@ -45,13 +47,13 @@ public class MainwindowController {
 
         if (result.isPresent() && result.get().equals(ButtonType.OK)) {
             NewguestwindowController controller = fxmlLoader.getController();
-//            Guest newGuest = controller.processChanges();
+            Guest newGuest = controller.processChanges();
 
-//            if (newGuest != null) {
-//                RuntimeGuestsData.getInstance().addGuest(newGuest);
-//            }
-        } else {
-//            showNotAddedDialog();
+            if (newGuest != null) {
+                RuntimeGuestsData.getInstance().addGuest(newGuest);
+            } else {
+                showNotAddedDialog();
+            }
         }
     }
 

@@ -4,6 +4,6 @@ module com.manhpd {
     requires java.sql;
     requires lombok;
 
-    opens com.manhpd to javafx.fxml;
-    exports com.manhpd;
+    opens sample to javafx.fxml;
+    exports sample;
 }
