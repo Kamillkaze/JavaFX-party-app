@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -16,7 +18,7 @@ public class MainwindowController {
     private BorderPane mainBorderPane;
 
     @FXML
-    private ListView guestsListView;
+    private ListView<Guest> guestsListView;
 
     @FXML
     private Label foodFromData;
@@ -29,7 +31,23 @@ public class MainwindowController {
 
     @FXML
     private void initialize() {
+
+        guestsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Guest>() {
+            @Override
+            public void changed(ObservableValue<? extends Guest> observableValue, Guest oldValue, Guest newValue) {
+                if (newValue != null) {
+                    foodFromData.setText(newValue.getFood());
+                    drinkFromData.setText(newValue.getDrink());
+                    phoneFromData.setText(newValue.getPhone());
+                }
+            }
+        });
+
         guestsListView.setItems(RuntimeGuestsData.getInstance().getGuests());
+        guestsListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        guestsListView.getSelectionModel().selectFirst();
+
+
     }
 
     @FXML
@@ -51,6 +69,7 @@ public class MainwindowController {
 
             if (newGuest != null) {
                 RuntimeGuestsData.getInstance().addGuest(newGuest);
+                guestsListView.getSelectionModel().select(newGuest);
             } else {
                 showNotAddedDialog();
             }

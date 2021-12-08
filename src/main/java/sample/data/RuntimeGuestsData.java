@@ -23,7 +23,7 @@ public class RuntimeGuestsData {
 
     public void addGuest(Guest newGuest) {
         guests.add(newGuest);
-//        Database.addGuestToDB(newGuest);
+        Database.addGuestToDB(newGuest);
     }
 
     public void deleteGuest(Guest guestToDelete) {

@@ -13,4 +13,9 @@ public class Guest {
     private String food;
     private String drink;
     private String phone;
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
