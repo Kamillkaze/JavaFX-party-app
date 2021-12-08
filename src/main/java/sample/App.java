@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.data.Database;
 
 /**
  * JavaFX App
@@ -23,4 +24,8 @@ public class App extends Application {
         launch();
     }
 
+    @Override
+    public void init() throws Exception {
+        Database.readData();
+    }
 }
