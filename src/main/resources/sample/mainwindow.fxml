@@ -28,7 +28,7 @@
         </HBox>
     </top>
     <left>
-        <ListView fx:id="guestsListView"/>
+        <ListView fx:id="guestsListView" onKeyPressed="#handleDelPressed"/>
     </left>
     <center>
         <VBox spacing="10">
