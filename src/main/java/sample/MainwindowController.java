@@ -58,6 +58,10 @@ public class MainwindowController {
                     foodFromData.setText(newValue.getFood());
                     drinkFromData.setText(newValue.getDrink());
                     phoneFromData.setText(newValue.getPhone());
+                } else {
+                    foodFromData.setText("");
+                    drinkFromData.setText("");
+                    phoneFromData.setText("");
                 }
             }
         });
