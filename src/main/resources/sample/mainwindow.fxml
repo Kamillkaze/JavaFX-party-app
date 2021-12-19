@@ -15,7 +15,7 @@
                     <Tooltip text="Click to add a new person"/>
                 </tooltip>
             </Button>
-            <Button text="Show drinks and food">
+            <Button text="Show drinks and food" onAction="#showFoodAndDrinkDialog">
                 <tooltip>
                     <Tooltip text="Click to display a list of drinks and food"/>
                 </tooltip>

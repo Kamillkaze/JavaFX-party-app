@@ -100,6 +100,20 @@ public class MainwindowController {
     }
 
     @FXML
+    private void showFoodAndDrinkDialog() {
+        Dialog<ButtonType> dialog = getDefaultDialog("Food and drinks dialog", "List of food and drinks:");
+
+        getDefaultFXMLLoader("foodanddrinkwindow.fxml", dialog);
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
+
+        dialog.showAndWait();
+    }
+
+
+
+
+    @FXML
     private void showNewGuestDialog() {
 
         Dialog<ButtonType> dialog = getDefaultDialog("New persons dialogue",
