@@ -31,6 +31,15 @@ public class RuntimeGuestsData {
         Database.removeGuestFromDB(guestToDelete.getPhone());
     }
 
+    public Guest findGuest(String phone) {
+        for (Guest guest: guests) {
+            if (guest.getPhone().equals(phone)) {
+                return guest;
+            }
+        }
+        return null;
+    }
+
     public void updateGuest(String phone, Guest updated) {
         guests.set(findIndex(phone), updated);
         Database.updateGuestInDB(phone, updated);

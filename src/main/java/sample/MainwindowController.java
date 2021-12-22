@@ -193,6 +193,17 @@ public class MainwindowController {
     }
 
     @FXML
+    private void showFindGuestDialog() {
+        Dialog<ButtonType> dialog = getDefaultDialog("Find Guest",
+                "Type phone number below to find a guest.");
+        getDefaultFXMLLoader("findwindow.fxml", dialog);
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
+
+        dialog.showAndWait();
+    }
+
+    @FXML
     private void handleDelPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.DELETE)) {
             showDeleteGuestDialog();

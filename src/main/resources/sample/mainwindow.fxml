@@ -20,7 +20,7 @@
                     <Tooltip text="Click to display a list of drinks and food"/>
                 </tooltip>
             </Button>
-            <Button text="Find">
+            <Button text="Find" onAction="#showFindGuestDialog">
                 <tooltip>
                     <Tooltip text="Click to find guest by phone number"/>
                 </tooltip>

@@ -12,7 +12,7 @@
             prefHeight="400.0" prefWidth="600.0">
 
     <content>
-        <BorderPane>
+        <BorderPane onKeyPressed="#handleEnterPressed">
             <top>
                 <VBox spacing="10">
                     <Label text="Type in phone number: "/>
