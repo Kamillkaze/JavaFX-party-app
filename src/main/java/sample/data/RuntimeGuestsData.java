@@ -40,9 +40,18 @@ public class RuntimeGuestsData {
         return null;
     }
 
-    public void updateGuest(String phone, Guest updated) {
-        guests.set(findIndex(phone), updated);
-        Database.updateGuestInDB(phone, updated);
+    public void updateGuest(Guest old, Guest updated) {
+        String updatedPhone = updated.getPhone();
+        String oldPhone = old.getPhone();
+
+        if (findIndex(updatedPhone) == -1) {
+            deleteGuest(old);
+            addGuest(updated);
+
+        } else {
+            guests.set(findIndex(updatedPhone), updated);
+            Database.updateGuestInDB(oldPhone, updated);
+        }
     }
 
     public int findIndex(String phone) {

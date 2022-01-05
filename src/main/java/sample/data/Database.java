@@ -84,11 +84,11 @@ public class Database {
         String drink = updated.getDrink();
         String phone = updated.getPhone();
 
-        command = "UPDATE " + TABLE_GUESTS + "SET name = '" + name +
-                                                "', food = '" + food +
-                                                "', drink = '" + drink +
-                                                "', phone = '" + phone +
-                                                "' WHERE phone = '" + searchedPhone + "'";
+        command = "UPDATE " + TABLE_GUESTS + " SET " + COLUMN_NAME + " = '" + name +
+                                                "', " + COLUMN_FOOD + " = '" + food +
+                                                "', " + COLUMN_DRINK + " = '" + drink +
+                                                "', " + COLUMN_PHONE + " = '" + phone +
+                                                "' WHERE " + COLUMN_PHONE + " = '" + searchedPhone + "'";
 
         proceedActionOnDB();
     }

@@ -204,6 +204,31 @@ public class MainwindowController {
     }
 
     @FXML
+    private void showUpdateGuestDialog() {
+        Dialog<ButtonType> dialog = getDefaultDialog("Update guest dialog",
+                "Fill the text fields to update guest info");
+        FXMLLoader fxmlLoader = getDefaultFXMLLoader("updateguestwindow.fxml", dialog);
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+
+        if (result.isPresent() && result.get().equals(ButtonType.OK)) {
+
+            UpdateGuestWindowController controller = fxmlLoader.getController();
+            Guest updated = controller.processChanges();
+            Guest old = controller.getOldGuest();
+
+            if (updated != null) {
+                RuntimeGuestsData.getInstance().updateGuest(old, updated);
+            } else {
+                showNotAddedDialog();
+            }
+        }
+    }
+
+    @FXML
     private void handleDelPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.DELETE)) {
             showDeleteGuestDialog();

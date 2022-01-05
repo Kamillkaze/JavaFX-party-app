@@ -25,6 +25,11 @@
                     <Tooltip text="Click to find guest by phone number"/>
                 </tooltip>
             </Button>
+            <Button text="Update guest" onAction="#showUpdateGuestDialog">
+                <tooltip>
+                    <Tooltip text="Click to update guest record in the database"/>
+                </tooltip>
+            </Button>
         </HBox>
     </top>
     <left>
