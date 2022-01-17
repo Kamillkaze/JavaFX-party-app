@@ -2,6 +2,7 @@ package sample;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import sample.data.Guest;
 import sample.data.RuntimeGuestsData;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Optional;
 
 public class MainwindowController {
@@ -66,7 +68,15 @@ public class MainwindowController {
             }
         });
 
-        guestsListView.setItems(RuntimeGuestsData.getInstance().getGuests());
+        SortedList<Guest> sortedList = new SortedList<>(RuntimeGuestsData.getInstance().getGuests());
+        sortedList.setComparator(new Comparator<Guest>() {
+            @Override
+            public int compare(Guest o1, Guest o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+
+        guestsListView.setItems(sortedList);
         guestsListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         guestsListView.getSelectionModel().selectFirst();
 
